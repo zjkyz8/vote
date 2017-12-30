@@ -3,6 +3,7 @@ import time
 import random
 import string
 import requests
+import sys
 
 while True:
 	print "Start : %s" % time.ctime()
@@ -11,6 +12,7 @@ while True:
 	r = requests.post('http://17070.aliyinba.com/Selection/SavaSurvey.ashx', data = {"VoteId": 209, "OpenId": openid, "ItemId":3949})
 	print r.text
 	print "End : %s" % time.ctime()
-	timeSec = random.randint(0, 60);
+	timeSec = random.randint(0,60);
 	print "sleep %s" % timeSec
 	time.sleep(timeSec)
+	sys.stdout.flush()
